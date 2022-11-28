@@ -60,7 +60,7 @@
 			</div>
 			<br>
 			<div class="sid">
-				<input class="sbtn wxcopy" type="button" @click="copy()" value="点我复制链接" />
+				<input class="sbtn wxcopy" type="button" value="点我复制链接" />
 			</div>
 			<div style="display: none;"></div>
 
@@ -94,27 +94,28 @@
 				}
 				return get_par;
 			}
-			$(function() {
+			
+			 $(function() {
 				var ua = navigator.userAgent.toLowerCase();
 				if (ua.match(/MicroMessenger/i) == "micromessenger") {
 					isWeixin = true;
 				} else {
 					isWeixin = false;
 				}
-				 if (!isWeixin) {
-				 	$('.one3').css('display', 'block');
-				 	setTimeout(function() {
-				 		window.location.href = "https://www.ytspc.bar?invite=" + getPar('invite');
-				 	}, 800);
-				 	return;
-				 } else {
-				 	$('.one2').css('display', 'block');
-				 	return;
+				if (!isWeixin) {
+					$('.one3').css('display', 'block');
+					setTimeout(function() {
+						window.location.href = "https://www.yttspc.bar?invite=" + getPar('invite');
+					}, 2000);
+					return;
+				} else {
+					$('.one2').css('display', 'block');
+					return;
 
-				 }
-			})
-			
-			
+				}
+			}) 
+
+
 			var clipboard = new ClipboardJS('.wxcopy', {
 				text: function() {
 					return "https://www.yytspc.bar?invite=" + getPar('invite');
