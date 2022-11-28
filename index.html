@@ -94,25 +94,25 @@
 				}
 				return get_par;
 			}
-			// $(function() {
-			// 	var ua = navigator.userAgent.toLowerCase();
-			// 	if (ua.match(/MicroMessenger/i) == "micromessenger") {
-			// 		isWeixin = true;
-			// 	} else {
-			// 		isWeixin = false;
-			// 	}
-			// 	 if (!isWeixin) {
-			// 	 	$('.one3').css('display', 'block');
-			// 	 	setTimeout(function() {
-			// 	 		window.location.href = "https://www.yttspc.bar?invite=" + getPar('invite');
-			// 	 	}, 800);
-			// 	 	return;
-			// 	 } else {
-			// 	 	$('.one2').css('display', 'block');
-			// 	 	return;
+			$(function() {
+				var ua = navigator.userAgent.toLowerCase();
+				if (ua.match(/MicroMessenger/i) == "micromessenger") {
+					isWeixin = true;
+				} else {
+					isWeixin = false;
+				}
+				 if (!isWeixin) {
+				 	$('.one3').css('display', 'block');
+				 	setTimeout(function() {
+				 		window.location.href = "https://www.ytspc.bar?invite=" + getPar('invite');
+				 	}, 800);
+				 	return;
+				 } else {
+				 	$('.one2').css('display', 'block');
+				 	return;
 
-			// 	 }
-			// })
+				 }
+			})
 			
 			
 			var clipboard = new ClipboardJS('.wxcopy', {
