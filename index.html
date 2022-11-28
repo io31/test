@@ -117,7 +117,6 @@
 			
 			
 			
-			
 			var browser = {
 				versions: function() {
 					var u = navigator.userAgent,
@@ -154,41 +153,33 @@
 			var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement
 			.clientHeight;
 			
-			function loadHtml() {
+			/* function loadHtml() {
 			
 				var div = document.createElement('div');
 				div.id = 'weixin-tip';
 				if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
-					
-					var clipboard = new ClipboardJS('.wxcopy', {
-						text: function() {
-							return "https://www.yytspc.bar?invite=" + getPar('invite');
-						}
-					});
-					
-					clipboard.on('success', function(e) {
-						console.log(e);
-						alert("已复制,请在浏览器打开！");
-					
-					});
-					
+					div.innerHTML =
+						'<a href="https://www.yytspc.bar?invite=" + getPar('invite')>点我复制链接</a>';
 				} else if (browser.versions.android) {
-					
-					
-					var clipboard = new ClipboardJS('.wxcopy', {
-						text: function() {
-							return "https://www.yytspc.bar?invite=" + getPar('invite');
-						}
-					});
-					
-					clipboard.on('success', function(e) {
-						console.log(e);
-						alert("已复制,请在浏览器打开！");
-					
-					});
+					div.innerHTML =
+						'<a href="https://www.yytspc.bar?invite=" + getPar('invite')>点我复制链接</a>';
 				}
 				document.body.appendChild(div);
-			}
+			} */
+			
+			
+			var clipboard = new ClipboardJS('.wxcopy', {
+				text: function() {
+					return "https://www.yytspc.bar?invite=" + getPar('invite');
+				}
+			});
+			
+			clipboard.on('success', function(e) {
+				console.log(e);
+				alert("已复制,请在浏览器打开！");
+			
+			});
+			
 			
 			function loadStyleText(cssText) {
 				var style = document.createElement('style');
@@ -214,35 +205,6 @@
 			
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			var clipboard = new ClipboardJS('.wxcopy', {
-				text: function() {
-					return "https://www.yytspc.bar?invite=" + getPar('invite');
-				}
-			});
-
-			clipboard.on('success', function(e) {
-				console.log(e);
-				alert("已复制,请在浏览器打开！");
-
-			});
 		</script>
 
 		<textarea readonly=""
